@@ -1,0 +1,187 @@
+@font-face {
+  font-family: ui;
+  src: url(./fonts/2cca21a49f7dad1daa612d73d50357644671964a);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: ui;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#left-menu {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+  min-width: 240px;
+  height: 100vh;
+  background-color: #2c2c2c;
+  color: white;
+  border-right: #3c3c3c 1px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#left-menu .icons {
+  width: 100%;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#left-menu .icons .figmaicon-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+}
+#left-menu .icons .figmaicon-menu .ri-figma-line {
+  font-size: 1.2rem;
+}
+#left-menu .icons .figmaicon-menu:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+#left-menu .icons .ri-layout-left-line {
+  font-size: 1.2rem;
+  padding: 6px;
+}
+#left-menu .icons .ri-layout-left-line:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+#left-menu .file-contener {
+  width: 100%;
+  padding: 10px 12px;
+  display: flex;
+  border-bottom: #3c3c3c 1px solid;
+}
+
+#main-content {
+  background-color: #1e1e1e;
+  min-height: 100vh;
+}
+
+#right-menu {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+  min-width: 240px;
+  height: 100vh;
+  background-color: #2c2c2c;
+  color: white;
+  border-left: #3c3c3c 1px solid;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+#center-tool-bar {
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+#center-tool-bar #tool-bar-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  background-color: #3c3c3c;
+  color: white;
+  border-radius: 8px 0px 0px 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), inset 0 -2px 5px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.1);
+  padding: 8px;
+}
+#center-tool-bar #tool-bar-left .padd {
+  padding: 4px;
+  font-size: 1.3rem;
+}
+#center-tool-bar #tool-bar-left .padd:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+#center-tool-bar #tool-bar-left .padd.active {
+  background-color: #0c8ce9;
+  border-radius: 4px;
+}
+#center-tool-bar #tool-bar-left .padd-y {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+#center-tool-bar #tool-bar-left .padd-y:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+#center-tool-bar #tool-bar-left .move-tool,
+#center-tool-bar #tool-bar-left .frame-tool,
+#center-tool-bar #tool-bar-left .square-tool,
+#center-tool-bar #tool-bar-left .pen-tool,
+#center-tool-bar #tool-bar-left .text-tool,
+#center-tool-bar #tool-bar-left .comment,
+#center-tool-bar #tool-bar-left .actions {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  font-weight: 500;
+}
+#center-tool-bar #tool-bar-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  background-color: #3c3c3c;
+  color: white;
+  padding-left: 4px;
+  border-radius: 0px 8px 8px 0px;
+  border-left: rgba(255, 255, 255, 0.384) 1px solid;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), inset 0 -2px 5px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.1);
+  padding: 6px;
+}
+#center-tool-bar #tool-bar-right .container-tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: rgba(141, 136, 136, 0.4862745098);
+  border-radius: 6px;
+  padding: 2px;
+}
+#center-tool-bar #tool-bar-right .container-tools .draw-tool,
+#center-tool-bar #tool-bar-right .container-tools .design,
+#center-tool-bar #tool-bar-right .container-tools .code-tool {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px;
+  font-size: 1.18rem;
+}
+#center-tool-bar #tool-bar-right .container-tools .draw-tool:hover,
+#center-tool-bar #tool-bar-right .container-tools .design:hover,
+#center-tool-bar #tool-bar-right .container-tools .code-tool:hover {
+  background-color: #3c3c3c;
+  border-radius: 4px;
+}
+#center-tool-bar #tool-bar-right .container-tools .draw-tool.active,
+#center-tool-bar #tool-bar-right .container-tools .design.active,
+#center-tool-bar #tool-bar-right .container-tools .code-tool.active {
+  color: #0c8ce9;
+  background-color: #3c3c3c;
+  border-radius: 4px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.631372549);
+}/*# sourceMappingURL=styles.css.map */

@@ -4,14 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Figma</title>
 </head>
 
 <body>
+    <div id="left-menu">
+        <div class="icons">
+            <div class="figmaicon-menu">
+                <i class="ri-figma-line"></i>
+                <i class="ri-arrow-drop-down-line "></i>
+            </div>
+            <i class="ri-layout-left-line"></i>
+        </div>
+
+        <div class="file-contener">
+            <div class="file-name">
+                <p>Untitled</p>
+            </div>
+            <div class="file-settings">
+                <i class="ri-arrow-drop-down-line "></i>
+            </div>
+        </div>
+
+        <div class="file-assets-search">
+            <div class="file-assets">
+                <span>File</span>
+                <span>Assets</span>
+            </div>
+            <i class="ri-search-line"></i>
+        </div>
+
+        <div class="pages-contener">
+            <div class="pages">
+                <i class="ri-arrow-drop-right-line"></i>
+                <span>Pages</span>
+            </div>
+            <div class="add-new-page">
+                <i class="ri-add-large-line"></i>
+            </div>
+        </div>
+
+        <div class="page-list">
+            <div class="page-item active-page">
+                <span>Page 1</span>
+            </div>
+            <!-- <div class="page-item">
+                <span>Page 2</span>
+                <i class="ri-eye-line"></i>
+            </div>
+            <div class="page-item">
+                <span>Page 3</span>
+                <i class="ri-eye-line"></i>
+            </div> -->
+        </div>
+
+        <div class="layers-contener">
+            <div class="layers">
+                <i class="ri-arrow-drop-right-line"></i>
+                <span>Layers</span>
+            </div>
+            <div class="add-new-layer">
+
+                <!-- all the layer will he writen here -->
+            </div>
+        </div>
+    </div>
 
 
+    <div id="main-content"></div>
+
+
+    <div id="right-menu">
+    </div>
+
+    <div id="center-tool-bar">
+        <div id="tool-bar-left">
+            <div class="move-tool">
+                <i class="ri-drag-drop-line padd"></i>
+                <i class="ri-arrow-drop-down-line padd-y"></i>
+            </div>
+            <div class="frame-tool">
+                <i class="ri-artboard-2-line padd"></i>
+                <i class="ri-arrow-drop-down-line padd-y"></i>
+            </div>
+            <div class="square-tool">
+                <i class="ri-square-line padd"></i>
+                <i class="ri-arrow-drop-down-line padd-y"></i>
+            </div>
+            <div class="pen-tool">
+                <i class="ri-pen-nib-line padd"></i>
+                <i class="ri-arrow-drop-down-line padd-y"></i>
+            </div>
+            <div class="text-tool">
+                <i class="ri-text padd"></i>
+            </div>
+            <div class="comment">
+                <i class="ri-chat-3-line padd"></i>
+            </div>
+            <div class="actions">
+                <i class="ri-shapes-line padd"></i>
+            </div>
+        </div>
+        <div id="tool-bar-right">
+            <div class="container-tools">
+                <div class="draw-tool">
+                    <i class="ri-sketching"></i>
+                </div>
+                <div class="design">
+                    <i class="ri-ruler-2-fill"></i>
+                </div>
+                <div class="code-tool">
+                    <i class="ri-code-s-slash-line"></i>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
