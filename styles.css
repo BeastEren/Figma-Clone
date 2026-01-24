@@ -126,11 +126,34 @@ body {
 }
 #left-menu .pages-contener {
   width: 100%;
-  padding: 10px 12px 10px 0px;
+  padding: 10px 12px 0px 0px;
   overflow-y: auto;
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
+}
+#left-menu .pages-contener .pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+#left-menu .pages-contener .pages i {
+  font-size: 0.5rem;
+  padding-left: 4px;
+  opacity: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+#left-menu .pages-contener:hover i {
+  opacity: 1;
+}
+#left-menu .pages-contener .add-new-page {
+  padding: 4px;
+}
+#left-menu .pages-contener .add-new-page:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
 }
 #left-menu .page-list {
   width: 100%;
@@ -144,12 +167,42 @@ body {
 }
 #left-menu .layers-contener {
   width: 100%;
-  padding: 10px 12px 10px 0px;
+  padding: 10px 0px;
   overflow-y: auto;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   font-size: 0.8rem;
+}
+#left-menu .layers-contener .layers {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding-bottom: 8px;
+}
+#left-menu .layers-contener .layers .ri-arrow-down-s-line {
+  font-size: 0.8rem;
+  padding-left: 4px;
+  opacity: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+#left-menu .layers-contener .layers .ri-arrow-drop-right-line {
+  font-size: 0.8rem;
+  padding-left: 4px;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.7);
+}
+#left-menu .layers-contener .layers:hover i {
+  opacity: 1;
+}
+
+.add-new-layer {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.layers-list-hidden {
+  display: none;
 }
 
 #main-content {
@@ -179,6 +232,7 @@ body {
 
 #center-tool-bar {
   position: fixed;
+  z-index: 1000;
   width: 100%;
   bottom: 20px;
   display: flex;
@@ -345,10 +399,21 @@ body {
 }
 
 .layer-item {
-  padding: 4px 6px;
+  margin: 5px 0px 0px 12px;
+  padding: 5px 6px;
   cursor: pointer;
   border-radius: 4px;
   font-size: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+.layer-item .layer-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.layer-item .layer-icon i {
+  font-size: 0.6rem;
 }
 
 .layer-item:hover {
@@ -359,8 +424,32 @@ body {
   background-color: rgba(12, 140, 233, 0.4);
 }
 
+.layer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.layer-actions .layer-up,
+.layer-actions .layer-down {
+  background-color: rgba(255, 255, 255, 0.9843137255);
+  border-radius: 5px;
+  border: none;
+  font-size: 1.02rem;
+  color: #0c8ce9;
+  transition: all 0.2s ease;
+}
+.layer-actions .layer-up:hover,
+.layer-actions .layer-down:hover {
+  cursor: pointer;
+}
+.layer-actions .layer-up:active,
+.layer-actions .layer-down:active {
+  transform: scale(0.9);
+}
+
 .properties {
-  padding: 12px;
+  width: 100%;
+  padding: 16px 12px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -391,4 +480,16 @@ body {
 
 .delete-btn:hover {
   background: #b93838;
+}
+
+.marquee {
+  position: absolute;
+  border: 1px dashed #0c8ce9;
+  background: rgba(12, 140, 233, 0.1);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+#main-content {
+  cursor: url("assets/icons/download.png") 4 4, auto;
 }/*# sourceMappingURL=styles.css.map */
