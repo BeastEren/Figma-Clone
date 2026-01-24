@@ -648,19 +648,6 @@ function renderLayersPanel() {
 function renderPropertiesPanel() {
     propertiesPanel.innerHTML = "";
 
-    // if (!state.selectedElementId) {
-    //     propertiesPanel.innerHTML = `
-    //   <p style="opacity:0.6; font-size:0.8rem; padding:12px;">
-    //     Select an element to edit properties
-    //   </p>
-    // `;
-    //     return;
-    // }
-
-    // const data = state.elements.find(
-    //     (el) => el.id === state.selectedElementId
-    // );
-
     if (state.selectedElementIds.length !== 1) {
         propertiesPanel.innerHTML = `
       <p style="opacity:0.6; font-size:0.8rem; padding:12px;">
@@ -917,6 +904,33 @@ function exportAsJSON() {
 }
 
 /*************************
+    EXPORT POPUP LOGIC
+ *************************/
+const figmaMenu = document.querySelector(".figmaicon-menu");
+const exportPopup = document.querySelector(".export-popup");
+
+figmaMenu.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent bubbling
+    exportPopup.classList.toggle("active-export-popup");
+    figmaMenu.classList.toggle("active-figmaicon-menu");
+});
+
+// Optional: click outside to close
+document.addEventListener("click", () => {
+    exportPopup.classList.remove("active-export-popup");
+    figmaMenu.classList.remove("active-figmaicon-menu");
+});
+
+// Prevent popup click from closing itself
+exportPopup.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+document.getElementById("export-html").addEventListener("click", exportAsHTML);
+
+document.getElementById("export-json").addEventListener("click", exportAsJSON);
+
+/*************************
     KEYBOARD SHORTCUTS
  *************************/
 document.addEventListener("keydown", (e) => {
@@ -958,46 +972,10 @@ document.addEventListener("keydown", (e) => {
 
     if (state.selectedElementIds.length == 0) return;
 
-    const data = state.elements.find(
-        (el) => el.id === state.selectedElementIds[0]
-    );
-    if (!data) return;
-
-    const STEP = 5;
-    const canvasRect = canvas.getBoundingClientRect();
-
-    // switch (e.key) {
-    //     case "Delete":
-    //     case "Backspace":
-    //         deleteSelectedElement();
-    //         e.preventDefault();
-    //         return;
-
-    //     case "ArrowLeft":
-    //         data.x = Math.max(0, data.x - STEP);
-    //         break;
-
-    //     case "ArrowRight":
-    //         data.x = Math.min(
-    //             canvasRect.width - data.width,
-    //             data.x + STEP
-    //         );
-    //         break;
-
-    //     case "ArrowUp":
-    //         data.y = Math.max(0, data.y - STEP);
-    //         break;
-
-    //     case "ArrowDown":
-    //         data.y = Math.min(
-    //             canvasRect.height - data.height,
-    //             data.y + STEP
-    //         );
-    //         break;
-
-    //     default:
-    //         return;
-    // }
+    // const data = state.elements.find(
+    //     (el) => el.id === state.selectedElementIds[0]
+    // );
+    // if (!data) return;
 
     switch (e.key) {
         case "Delete":

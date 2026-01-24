@@ -196,6 +196,58 @@ body {
   opacity: 1;
 }
 
+/* REQUIRED: allow popup to escape */
+.figmaicon-menu {
+  position: relative;
+  overflow: visible;
+}
+
+/* EXPORT POPUP */
+.export-popup {
+  border-radius: 6px;
+  padding: 6px;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateX(-120px);
+  pointer-events: auto !important;
+  background: rgb(82, 79, 79) !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 120px !important;
+  z-index: 99999 !important;
+}
+
+/* SHOW ON ACTIVE */
+.active-figmaicon-menu {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.active-export-popup {
+  display: flex;
+  opacity: 1;
+  z-index: 9999;
+  pointer-events: auto;
+  transform: translateX(-120px) translateY(40px);
+}
+
+/* BUTTON STYLE */
+.export-popup button {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.export-popup button:hover {
+  background: #2a2a2a;
+}
+
 .add-new-layer {
   max-height: 100%;
   overflow-y: auto;
@@ -212,7 +264,6 @@ body {
   right: 240px;
   height: 100vh;
   background-color: #1e1e1e;
-  overflow: hidden;
 }
 
 #right-menu {
@@ -399,7 +450,7 @@ body {
 }
 
 .layer-item {
-  margin: 5px 0px 0px 12px;
+  margin: 5px 12px 0px 12px;
   padding: 5px 6px;
   cursor: pointer;
   border-radius: 4px;
